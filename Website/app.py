@@ -94,7 +94,9 @@ def ppd_test_result():
         print('Negative')
         return render_template('negative.html')
 
-    
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chat-bot.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
