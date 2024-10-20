@@ -1,0 +1,8 @@
+pypdf 
+google-generativeai
+chromadb
+typing_extensions
+gradio
+huggingface_hub
+
+
