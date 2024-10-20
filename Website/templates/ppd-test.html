@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postpartum Assessment Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F0F0F5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 70%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #444444;
+        }
+
+        select,
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .radio-group {
+            display: flex;
+            padding: 10px 0;
+        }
+
+        .radio-group-item {
+            display: flex;
+            align-items: center;
+            min-width: 100px;
+        }
+
+        .radio-group-item label {
+            margin-left: 5px;   
+            color: #555555;
+        }
+
+        .btn-submit {
+            width: 25%;
+            padding: 12px;
+            background-color: #6e4547;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #805AD5;
+        }
+        .form-group > label {
+            padding-bottom: 10px;
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Postpartum Assessment</h2>
+        </div>
+        <div class="description">
+            <p>Answer the following questions to assess your postpartum depression risk.</p>
+        </div>
+        <form id="postpartum-form" method="POST" action="/ppd-test-result">
+            <!-- Age Selection -->
+            <div class="form-group">
+                <label for="age">Age</label>
+                <select id="age" name="age" required>
+                    <option value="">Select age range</option>
+                    <option value="25-30">26-30 years</option>
+                    <option value="30-35">31-35 years</option>
+                    <option value="35-40">36-40 years</option>
+                    <option value="40-45">41-45 years</option>
+                    <option value="45-50">45-50 years</option>
+                </select>
+            </div>
+
+            <!-- Questions -->
+            <div class="form-group">
+                <label>Feeling sad or tearful?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingSad-yes" name="feelingSad" value="yes" required>
+                        <label for="feelingSad-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingSad-no" name="feelingSad" value="no" required>
+                        <label for="feelingSad-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingSad-sometimes" name="feelingSad" value="sometimes" required>
+                        <label for="feelingSad-sometimes">Sometimes</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Irritable towards baby and parents?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="irritable-yes" name="irritable" value="yes" required>
+                        <label for="irritable-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="irritable-no" name="irritable" value="no" required>
+                        <label for="irritable-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="irritable-sometimes" name="irritable" value="sometimes" required>
+                        <label for="irritable-sometimes">Sometimes</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Trouble sleeping at night?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="troubleSleeping-yes" name="troubleSleeping" value="yes" required>
+                        <label for="troubleSleeping-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="troubleSleeping-no" name="troubleSleeping" value="no" required>
+                        <label for="troubleSleeping-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="troubleSleeping-sometimes" name="troubleSleeping" value="two_or_more_days_a_week" required>
+                        <label for="troubleSleeping-sometimes">Two or more days a week</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Problem in concentrating or decision making?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="concentrationProblems-yes" name="concentrationProblems" value="yes" required>
+                        <label for="concentrationProblems-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="concentrationProblems-no" name="concentrationProblems" value="no" required>
+                        <label for="concentrationProblems-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="concentrationProblems-sometimes" name="concentrationProblems" value="sometimes" required>
+                        <label for="concentrationProblems-sometimes">Not at all</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Overeating or loss of appetite?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="appetiteChanges-yes" name="appetiteChanges" value="yes" required>
+                        <label for="appetiteChanges-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="appetiteChanges-no" name="appetiteChanges" value="no" required>
+                        <label for="appetiteChanges-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="appetiteChanges-sometimes" name="appetiteChanges" value="sometimes" required>
+                        <label for="appetiteChanges-sometimes">Not at all</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Feeling anxiety?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingAnxiety-yes" name="feelingAnxiety" value="yes" required>
+                        <label for="feelingAnxiety-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingAnxiety-no" name="feelingAnxiety" value="no" required>
+                        <label for="feelingAnxiety-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="feelingAnxiety-maybe" name="feelingAnxiety" value="maybe" required>
+                        <label for="feelingAnxiety-maybe">Maybe</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Problems of bonding with baby?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="bondingProblems-yes" name="bondingProblems" value="yes" required>
+                        <label for="bondingProblems-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="bondingProblems-no" name="bondingProblems" value="no" required>
+                        <label for="bondingProblems-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="bondingProblems-sometimes" name="bondingProblems" value="sometimes" required>
+                        <label for="bondingProblems-sometimes">Sometimes</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Suicidal thoughts?</label>
+                <div class="radio-group">
+                    <div class="radio-group-item">
+                        <input type="radio" id="suicidalThoughts-yes" name="suicidalThoughts" value="yes" required>
+                        <label for="suicidalThoughts-yes">Yes</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="suicidalThoughts-no" name="suicidalThoughts" value="no" required>
+                        <label for="suicidalThoughts-no">No</label>
+                    </div>
+                    <div class="radio-group-item">
+                        <input type="radio" id="suicidalThoughts-notInterested" name="suicidalThoughts" value="not_interested_to_say" required>
+                        <label for="suicidalThoughts-notInterested">Not interested in suicide</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Assessment</button>
+        </form>
+    </div>
+    <!-- <script>
+        // Collect form data and send it as JSON to '/ppd-test-result'
+        document.getElementById('postpartum-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the default form submission
+            const formData = new FormData(this);
+            const formJSON = {};
+            // Convert form data to JSON
+            formData.forEach((value, key) => {
+                formJSON[key] = value;
+            });
+            // Send data using fetch API
+            fetch('/ppd-test-result', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formJSON), // Send form data as JSON
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert("Assessment submitted successfully!");
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("There was an error submitting the assessment.");
+                });
+        });
+    </script> -->
+</body>
+
+</html>
