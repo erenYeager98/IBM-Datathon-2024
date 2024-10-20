@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maternEASE - Empowering Women through AI-Driven Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #4A4A4A;
+            background-color: #F8F5F2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #fefcf9;
+            padding: 10px 15px 20px 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4A4A4A;
+            padding: 10px 8px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4A4A4A;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #6e4547;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #805AD5;
+        }
+        .hero {
+            padding: 50px 0;
+            background-color: #fefcf9;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #4A4A4A;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #6B7280;
+        }
+        .hero-image {
+            flex: 1;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .section {
+            padding: 80px 0 0 0;
+        }
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #4A4A4A;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .feature {
+            flex-basis: calc(33.333% - 20px);
+            text-align: center;
+            margin-bottom: 40px;
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .feature img {
+            width: 325px;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #4A4A4A;
+        }
+        .feature p {
+            color: #6B7280;
+        }
+        .image-text-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .image-text-section img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .image-text-content {
+            width: 50%;
+            padding: 0 40px;
+        }
+        .image-text-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #4A4A4A;
+        }
+        .image-text-content p {
+            margin-bottom: 20px;
+            color: #6B7280;
+        }
+        .testimonials {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .testimonial {
+            flex-basis: calc(33.333% - 20px);
+            text-align: center;
+            margin-bottom: 40px;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .testimonial h3 {
+            margin-bottom: 10px;
+            color: #4A4A4A;
+        }
+        .testimonial p {
+            color: #6B7280;
+        }
+        footer {
+            background-color: #4A4A4A;
+            color: #fff;
+            padding: 40px 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            flex-basis: calc(25% - 20px);
+        }
+        .footer-section h3 {
+            margin-bottom: 20px;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 1024px) {
+            .feature, .testimonial {
+                flex-basis: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 768px) {
+            .hero-content, .image-text-section {
+                flex-direction: column;
+            }
+            .hero-text, .hero-image, .image-text-section img, .image-text-content {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .feature, .testimonial {
+                flex-basis: 100%;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .footer-section {
+                margin-bottom: 30px;
+            }
+        }
+        .playfair-display-font {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">maternEASE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text playfair-display-font">
+                <h1>Discover the Power of AI-Driven Care</h1>
+                <p>Empowering women through innovative AI solutions for maternal health</p>
+                <a href="/ppd-test" class="btn">Get Started</a>
+            </div>
+            <div class="hero-image">
+                <img src="/static/images/motherWithABaby.png" alt="Mother with baby">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="image-text-section">
+                <img src="/static/images/motherWithASmallBaby.png" alt="Mother with baby">
+                <div class="image-text-content">
+                    <h2 class="playfair-display-font">Transforming Postpartum Care</h2>
+                    <p>Our AI-driven approach ensures comprehensive support during your postpartum journey, addressing both physical and emotional needs.</p>
+                    <a href="/ppd-test" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Empowering Women through AI-Driven Care</h2>
+            <div class="features">
+                <div class="feature">
+                    <img src="/static/images/answerFewQuestions.png" alt="answerFewQuestions">
+                    <h3>Check your Symptoms</h3>
+                    <p>It's a early diagnosis process where your symptoms analyzed by AI to check if you have <b>Peripartum Depression(PPD)</b></p>
+                </div>
+                <div class="feature">
+                    <img src="/static/images/askourAI.png" alt="AI-Powered Insights">
+                    <h3>Ask Our AI Assistant</h3>
+                    <p>You can chat with our AI assistant to get Advanced analytics for better health outcomes</p>
+                </div>
+                <div class="feature">
+                    <img src="/static/images/personal.png" alt="Secure & Private">
+                    <h3>Personalized Care</h3>
+                    <p>Our AI provides personalized care to ensure that you achieve better health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <img src="/static/images/section.png" alt="Mother with baby" width="100%" style="padding-top: 80px; ;">
+
+    <div class="container" style="background-color: #fbf9ee;">
+        <img src="/static/images/Finalesection.png" alt="Mother with baby" width="100%" style="padding-top: 80px; ;">
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="width: 85%;margin: auto auto;">
+                <div class="footer-section">
+                    <h3>maternEASE</h3>
+                    <p>Empowering women through AI-driven maternal care</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@maternease.com</p>
+                    <p>Phone: +91 123456789</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
