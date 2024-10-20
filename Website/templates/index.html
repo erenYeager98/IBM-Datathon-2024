@@ -197,7 +197,9 @@
             color: #fff;
             text-decoration: none;
         }
-        
+        .complete-section {
+            padding-top: 80px
+        }
         @media (max-width: 1024px) {
             .feature, .testimonial {
                 flex-basis: calc(50% - 20px);
@@ -228,6 +230,67 @@
             font-weight: 600;
             font-style: normal;
             }
+        .float{
+            float: left;
+            width: 50%;
+        }
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-container h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #3e3e3e;
+            margin-bottom: 20px;
+        }
+        .section-container p {
+            font-size: 16px;
+            color: #6b6b6b;
+            margin-bottom: 50px;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 20px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 60px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 22px;
+            color: #3e3e3e;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #6b6b6b;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -292,11 +355,50 @@
         </div>
     </section>
     
-    <img src="/static/images/section.png" alt="Mother with baby" width="100%" style="padding-top: 80px; ;">
-
-    <div class="container" style="background-color: #fbf9ee;">
-        <img src="/static/images/Finalesection.png" alt="Mother with baby" width="100%" style="padding-top: 80px; ;">
+    <div class="complete-section">
+        <div style="position: relative; text-align: left; color: white;">
+            <img src="/static/images/section.png" alt="Mother with baby" width="100%">
+            <div style="position: absolute; top: 25%; left: 10%; ">
+                <h2 class="playfair-display-font" style="font-size: xx-large;">Elevating Postpartum Care</h3><br>
+                <div class="description" style="font-size: larger;line-height: 90%;">
+                <p>Our AI-driven approach ensures comprehensive support </p><br>
+                <p>during your postpartum journey, addressing both physical </p><br>
+                <p>and emotional needs.</p>
+                </div>
+            </div>
+        </div>
+        <!-- <img src="/static/images/section.png" alt="Mother with baby" width="100%" > -->
     </div>
+    <section class="section-container">
+        <h1>Elevating Postpartum Care with AI-Driven Solutions</h1>
+        <p>NurtureAI's innovative platform leverages the power of artificial intelligence to provide comprehensive screening and support for postpartum health.</p>
+        
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="/static/images/icon.png" alt="Icon 1">
+                <h3>Embrace the Future</h3>
+                <p>At maternEASE, we believe that every mother deserves access to the most advanced care and support.</p>
+                <p>Unlock Your Postpartum</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="/static/images/icon.png" alt="Icon 2">
+                <h3>Empowering</h3>
+                <p>maternEASE's comprehensive approach combines the power of artificial intelligence with compassionate care.</p>
+                <p>Discover Your Postpartum</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="/static/images/icon.png" alt="Icon 3">
+                <h3>Revolutionizing</h3>
+                <p>maternEASE's cutting-edge platform leverages the latest advancements in AI to provide transformative care.</p>
+                <p>Embrace Your Postpartum</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -309,8 +411,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="/ppd-test">Take test</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
