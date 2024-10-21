@@ -31,7 +31,6 @@ columns = [
 
 app = Flask(__name__)
 CORS(app)
-model=load_model('postpartum.h5')
 
 @app.route('/', methods=['GET'])
 def home():
@@ -82,19 +81,41 @@ def ppd_test_result():
         'suicide_attempt_Not interested to say': 1 if data['suicidalThoughts'] == 'not_interested_to_say' else 0,
         'suicide_attempt_Yes': 1 if data['suicidalThoughts'] == 'yes' else 0
     }])
+    import onnxruntime as ort
+    import numpy as np
 
-    output = model.predict(df)
-    print(output)
-    print(output.shape)
+    # Load the ONNX model
+    onnx_model_path = "./new_model.onnx"
+    session = ort.InferenceSession(onnx_model_path)
 
-    if output > 0.5:
-        print('Positive')
+    # Check the model's input and output
+    input_name = session.get_inputs()[0].name  # Input name
+    output_name = session.get_outputs()[0].name  # Output name
+
+    # Prepare your input (this example assumes a 2D input)
+    input_data = df.to_numpy().astype(np.float32)
+
+    # Run inference
+    result = session.run([output_name], {input_name: input_data})
+
+    # Print the result
+    # print("Inference result:", result)
+
+
+    # output = model.predict(df)
+    # print(output)
+    # print(output.shape)
+
+    # if output > 0.5:
+    #     print('Positive')
+    #     return render_template('positive.html')
+    # else:
+    #     print('Negative')
+    #     return render_template('negative.html')
+
+    print(result)
+    if(result):
         return render_template('positive.html')
-    else:
-        print('Negative')
-        return render_template('negative.html')
-
-    
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
