@@ -52,6 +52,8 @@ python3 app.py
 
 Checkout this youtube video [https://youtu.be/J_yzwJIambA](https://youtu.be/J_yzwJIambA)
 
+Check out the chatbot hosted at: [https://huggingface.co/spaces/Aldrin04/Post_partum_depression](https://huggingface.co/spaces/Aldrin04/Post_partum_depression)
+
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .ipynb file
