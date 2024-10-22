@@ -114,7 +114,7 @@ def ppd_test_result():
     #     return render_template('negative.html')
 
     print(result)
-    if(result>0.5):
+    if(result[0]>0.5):
         print('positive')
         return render_template('positive.html')
     else:
